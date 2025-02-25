@@ -1,16 +1,12 @@
 use std::collections::HashMap;
 
 fn main() {
-    let data: [(&str, u8); 4] = [("Brandon", 2), ("Cameron", 7), ("Reid", 3), ("Rachel", 4)];
-    let mut x: HashMap<&str, u8> = HashMap::from(data);
-    println!("{x:#?}");
+    let mut coffee_pairings: HashMap<&str, &str> = HashMap::new();
+    let drink: String = String::from("Latte");
+    let milk: String = String::from("Oat Milk");
+    coffee_pairings.insert(&drink, &milk);
+    coffee_pairings.insert("Flat White", "Almond Milk");
+    println!("{:#?}", coffee_pairings.len());
 
-    let reid: Option<u8> = x.remove("Reid");
-    println!("{:#?}", reid.unwrap());
-    let reid: Option<u8> = x.remove("Reid");
-    println!("{:#?}", reid);
-
-
-
-    println!("{x:#?}");
+    println!("{drink}, {milk}")
 }
