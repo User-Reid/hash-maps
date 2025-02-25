@@ -1,20 +1,16 @@
 use std::collections::HashMap;
 
 fn main() {
-    let mut menu: HashMap<String, f64> = HashMap::new();
+    let data: [(&str, u8); 4] = [("Brandon", 2), ("Cameron", 7), ("Reid", 3), ("Rachel", 4)];
+    let mut x: HashMap<&str, u8> = HashMap::from(data);
+    println!("{x:#?}");
 
-    menu.insert("Salmon".to_string(), 32.99);
-    menu.insert("Steak".to_string(), 42.99);
-    menu.insert("Lobster".to_string(), 32.99);
+    let reid: Option<u8> = x.remove("Reid");
+    println!("{:#?}", reid.unwrap());
+    let reid: Option<u8> = x.remove("Reid");
+    println!("{:#?}", reid);
 
-    println!("{menu:#?}");
 
-    // let mut country_capital: HashMap<&str, &str> = HashMap::new();
-    let mut country_capital = HashMap::<&str, &str>::new();
 
-    country_capital.insert("France", "Paris");
-    country_capital.insert("Germany", "Berlin");
-    country_capital.insert("Austin", "Texas");
-
-    println!("{country_capital:#?}");
+    println!("{x:#?}");
 }
