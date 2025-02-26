@@ -6,7 +6,10 @@ fn main() {
     let milk: String = String::from("Oat Milk");
     coffee_pairings.insert(&drink, &milk);
     coffee_pairings.insert("Flat White", "Almond Milk");
-    println!("{:#?}", coffee_pairings.len());
 
-    println!("{drink}, {milk}")
+    let value: &str = coffee_pairings
+        .get("Flat White")
+        .copied()
+        .unwrap_or("Shit aint there cousin");
+    println!("{}", value)
 }
