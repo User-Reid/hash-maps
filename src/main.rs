@@ -1,17 +1,19 @@
-use std::collections::HashMap;
+use std::collections::HashSet;
 
 fn main() {
-    let mut coffee_pairings: HashMap<&str, &str> = HashMap::new();
-    let drink: String = String::from("Latte");
-    let milk: String = String::from("Oat Milk");
-    coffee_pairings.insert(&drink, &milk);
-    coffee_pairings.insert("Flat White", "Almond Milk");
+    let mut concert_que: HashSet<&str> = HashSet::new();
+    println!("{concert_que:#?}");
+    concert_que.insert("Reid");
+    concert_que.insert("Rae");
+    println!("{concert_que:#?}");
+    println!("{:#?}", concert_que.len());
 
-    coffee_pairings.entry("Latte").or_insert("Taco");
-    println!("{coffee_pairings:#?}");
+    concert_que.insert("Reid");
+    println!("{concert_que:#?}");
 
-    coffee_pairings
-        .entry("Cappuccino")
-        .or_insert("Pistachio Milk");
-    println!("{coffee_pairings:#?}")
+    println!("{}", concert_que.remove("Rae"));
+    println!("{}", concert_que.remove("Tol"));
+    println!("{:#?}", concert_que);
+
+    println!("{:#?}", concert_que.get("Reid").unwrap());
 }
