@@ -11,5 +11,7 @@ fn main() {
         .get("Flat White")
         .copied()
         .unwrap_or("Shit aint there cousin");
-    println!("{}", value)
+    println!("{}", value);
+    coffee_pairings.insert("Latte", "Pistachio Milk");
+    println!("{coffee_pairings:#?}")
 }
